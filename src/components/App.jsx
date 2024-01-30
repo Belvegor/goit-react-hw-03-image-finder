@@ -23,9 +23,7 @@ const App = () => {
       try {
         setIsLoading(true);
 
-        
         const response = await axios.get(`${BASE_URL}&q=${query}&page=${page}`);
-        
         
         setImages((prevImages) => [...prevImages, ...response.data.hits]);
       } catch (error) {
@@ -36,8 +34,7 @@ const App = () => {
     };
 
     fetchData();
-  }, [query, page]);
-
+  }, [query, page, BASE_URL]); 
   const handleSearchSubmit = (searchQuery) => {
     setQuery(searchQuery);
     setPage(1);
