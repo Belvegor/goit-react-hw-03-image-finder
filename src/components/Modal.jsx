@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import styles from './styles.module.css';
 
 const Modal = ({ imageUrl, onClose }) => {
@@ -23,6 +24,11 @@ const Modal = ({ imageUrl, onClose }) => {
       </div>
     </div>
   );
+};
+
+Modal.propTypes = {
+  imageUrl: PropTypes.string.isRequired,
+  onClose: PropTypes.func.isRequired,
 };
 
 export default Modal;
